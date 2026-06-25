@@ -1,0 +1,81 @@
+For Loop (Repetition)
+Imagine your teacher tells you: "Write 'I am sorry' 100 times."
+
+You wouldn't want to write the same line of code 100 times. Instead, we use a Loop.
+
+Code Example:
+C++
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Print "Hello" 5 times
+    for (int i = 1; i <= 5; i++) {
+        cout << "Hello" << endl;
+    }
+    
+    return 0;
+}
+Breakdown:
+The syntax is written as: for (initialization; condition; updation)
+
+Initialization (int i = 1): This is where we start. It runs only once at the beginning. (This part can be left empty).
+Condition (i <= 5): The computer checks this before every round. If true, the loop continues. (This part can be left empty).
+Updation (i++): This happens at the end of every round, usually to update the counter. (This part can be left empty).
+
+6. While Loop
+A while loop is like a for loop, but simpler. It only cares about the condition.
+
+"While you are hungry, eat."
+
+Code Example:
+C++
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count = 1;
+
+    while (count <= 5) {
+        cout << count << " ";
+        count++; // Important! Increase count, otherwise it runs forever.
+    }
+    
+    return 0;
+}
+Output: 1 2 3 4 5
+
+7. Switch Case
+When you have many options to choose from (like a menu), using many if-else checks gets messy. We use switch instead.
+
+Code Example:
+#include <iostream>
+using namespace std;
+
+int main() {
+    int day = 3;
+
+    switch (day) {
+        case 1:
+            cout << "Monday";
+            break;
+        case 2:
+            cout << "Tuesday";
+            break;
+        case 3:
+            cout << "Wednesday";
+            break;
+        default:
+            cout << "Invalid day";
+    }
+    
+    return 0;
+}
+Explanation: The computer checks day. It matches with case 3 and prints "Wednesday".
+
+The break statement: It is used to "break out" of the switch block. If you omit break, the program continues executing the code in the next cases regardless of whether they match (this is called fall-through). We add it to ensure only the matching block runs.
+The default keyword: This specifies the code to run if none of the cases match the value. It acts like the final else in an if-else chain.

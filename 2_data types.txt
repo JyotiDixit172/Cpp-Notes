@@ -1,0 +1,124 @@
+Common Data Types:
+1.  int (Integer): Stores whole numbers.
+    Example: 5, -10, 100
+    float (Floating Point): Stores decimal numbers.
+2.  Example: 3.14, 2.5, -0.1
+    char (Character): Stores a single letter or symbol.
+    Example: 'a', 'Z', '$'
+
+3.  bool (Boolean): Stores only True or False.
+    Example: true, false
+    string (String): Stores text (collection of characters).
+    Example: "Hello", "C++"
+
+4.  Arrays
+    What if we need to store marks of 50 students? Creating 50 variables (m1, m2, m3...) is bad.
+
+    An Array is a single variable that can hold multiple values of the same type. Think of it as an egg tray.
+
+    Code Example:
+    C++
+
+
+    #include <iostream>
+    using namespace std;
+
+    int main() {
+        // Create an array of 5 integers
+        int marks[5] = {90, 85, 92, 78, 88};
+        
+        // Accessing the first student's marks
+        cout << marks[0] << endl; // Output: 90
+        
+        // Accessing the third student's marks
+        cout << marks[2] << endl; // Output: 92
+        
+        return 0;
+    }
+    Important: In C++, counting(indexing) starts from 0. So the first element is at index 0.
+
+5. Strings
+    A string is used to store text. It is actually a chain of characters.
+
+    Code Example:
+    C++
+
+
+    #include <iostream>
+    using namespace std;
+
+    int main() {
+        string firstName = "John";
+        string lastName = "Doe";
+        
+        // Concatenation (Joining strings)
+        string fullName = firstName + " " + lastName;
+        
+        cout << fullName << endl; // Output: John Doe
+        
+        // Finding length
+        cout << fullName.length(); // Output: 8
+        
+        return 0;
+    }
+
+6. Functions
+    A function is a block of code that does a specific task. We write it once and call it whenever we need it.
+
+    It's like a "helper" or a "servant". We teach the servant how to make tea once, and then just order "Make Tea" anytime.
+
+    Code Example:
+
+    #include <iostream>
+    using namespace std;
+
+    // Function Definition
+    void sayHello() {
+        cout << "Hello user!" << endl;
+    }
+
+    int main() {
+        sayHello(); // Calling the function
+        sayHello(); // Calling it again
+        return 0;
+    }
+    Functions keep our code clean and reusable.
+
+7. Pass by Value vs Pass by Reference
+    This is a slightly advanced but important concept. When we pass variables to functions, how are they sent?
+
+    A. Pass by Value (The Photocopy)
+    In Pass By Value, the function gets a copy of the variable. Changing the copy does NOT change the original.
+
+    #include <iostream>
+    using namespace std;
+
+    void changeValue(int x) {
+        x = 100; // Changes only the copy
+    }
+
+    int main() {
+        int num = 10;
+        changeValue(num);
+        cout << num; // Output: 10 (Original didn't change!)
+    }
+    
+    B. Pass by Reference (The Original)
+    In Pass by Reference, we send the address of the variable (using &). The function works on the original variable.
+
+
+    #include <iostream>
+    using namespace std;
+
+    void changeRealValue(int &x) { // Note the '&'
+        x = 100; // Changes the actual variable
+    }
+
+    int main() {
+        int num = 10;
+        changeRealValue(num);
+        cout << num; // Output: 100 (It changed!)
+    }
+    Analogy:
+    - Pass by Value: Sharing a photo of your homework. If your friend writes on the photo, your notebook stays clean.
+    - Pass by Reference: Giving your actual notebook. If your friend writes in it, your notebook is changed.
